@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Task Manager</h1>
+    <button id="theme-toggle">Toggle Dark/Light Mode</button>
+  </header>
+
+  <aside>
+    <ul>
+      <li class="active">Dashboard</li>
+      <li>Tasks</li>
+      <li>Profile</li>
+      <li>Settings</li>
+    </ul>
+  </aside>
+
+  <main>
+    <section id="task-section">
+      <h2>Tasks</h2>
+      <input type="text" id="task-input" placeholder="Add a new task">
+      <button id="add-task-btn">Add Task</button>
+      <ul id="task-list"></ul>
+    </section>
+
+    <section id="profile-section">
+      <h2>User Profile</h2>
+      <p>Name: Jane Doe</p>
+      <p>Email: jane@example.com</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
