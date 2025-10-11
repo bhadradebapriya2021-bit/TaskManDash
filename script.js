@@ -29,11 +29,18 @@ addTaskBtn.addEventListener("click", () => {
       li.classList.toggle("completed");
     });
 
-    // BUG: Edit task function does not work properly
+    // Edit task: respect Cancel and empty input
     li.querySelector(".edit-btn").addEventListener("click", () => {
-      const newText = prompt("Edit task:", li.querySelector("span").innerText);
-      // BUG: Forgot to check if user cancels prompt
-      li.querySelector("span").innerText = newText; 
+      const spanEl = li.querySelector("span");
+      const currentText = spanEl.innerText;
+      const result = prompt("Edit task:", currentText);
+
+      // If user cancels (null) or submits empty/whitespace, keep unchanged
+      if (result === null) return;
+      const trimmed = result.trim();
+      if (trimmed === "") return;
+
+      spanEl.innerText = trimmed;
     });
   }
 });
